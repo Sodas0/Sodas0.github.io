@@ -3,63 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="A stunning personal portfolio website">
+    <title>Portfolio | Soham Das</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: #f4f4f9;
-            color: #333;
+        /* Add custom scroll animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        header {
-            margin-bottom: 20px;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            text-decoration: none;
-            color: #007bff;
-            margin: 0 10px;
-            font-size: 1.2em;
-        }
-        nav a:hover {
-            text-decoration: underline;
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Explore my journey in computer science.</p>
-    </header>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi! I'm <strong>Soham</strong>, a passionate computer science student.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://github.com/your-repo">Project 1</a></li>
-            <li><a href="https://github.com/your-repo">Project 2</a></li>
-            <li><a href="https://github.com/your-repo">Project 3</a></li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email me at: <a href="mailto:soham.das.asm@gmail.com">soham.das.asm@gmail.com</a></p>
-    </section>
+<body class="bg-gray-900 text-gray-200 font-sans">
+    <!-- Root Container -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="text-center py-8">
+            <h1 class="text-4xl font-bold text-white">Soham Das</h1>
+            <p class="text-lg text-gray-400">Software Engineer</p>
+        </header>
+
+        <!-- Directory Navigation -->
+        <nav class="py-4 border-t border-b border-gray-700 mb-8">
+            <ul class="flex justify-center space-x-8 text-lg">
+                <li><a href="#about" class="text-blue-400 hover:underline">About Me</a></li>
+                <li><a href="#projects" class="text-blue-400 hover:underline">Projects</a></li>
+                <li><a href="#contact" class="text-blue-400 hover:underline">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-8 fade-in">
+            <h2 class="text-3xl font-semibold mb-4 text-white">About Me</h2>
+            <p class="text-gray-400 leading-relaxed">
+                Hello! I'm <strong>Soham</strong>.
+            </p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-8 fade-in">
+            <h2 class="text-3xl font-semibold mb-4 text-white">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Card -->
+                <div class="bg-gray-800 shadow-lg rounded-lg p-4">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Project 1</h3>
+                    <p class="text-gray-400">A brief description of the project, highlighting its key features and technologies used.</p>
+                    <a href="#" class="text-blue-400 hover:underline mt-2 inline-block">View Details</a>
+                </div>
+                <!-- Repeat Project Cards -->
+                <div class="bg-gray-800 shadow-lg rounded-lg p-4">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Project 2</h3>
+                    <p class="text-gray-400">A brief description of the project, highlighting its key features and technologies used.</p>
+                    <a href="#" class="text-blue-400 hover:underline mt-2 inline-block">View Details</a>
+                </div>
+                <div class="bg-gray-800 shadow-lg rounded-lg p-4">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Project 3</h3>
+                    <p class="text-gray-400">A brief description of the project, highlighting its key features and technologies used.</p>
+                    <a href="#" class="text-blue-400 hover:underline mt-2 inline-block">View Details</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-8 fade-in">
+            <h2 class="text-3xl font-semibold mb-4 text-white">Contact</h2>
+            <p class="text-gray-400 mb-4">Feel free to reach out via the form below or connect with me on social media.</p>
+            <form class="bg-gray-800 shadow-lg rounded-lg p-6 space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-400">Name</label>
+                    <input type="text" id="name" class="w-full mt-1 p-2 border border-gray-700 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-gray-900 text-gray-200">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-400">Email</label>
+                    <input type="email" id="email" class="w-full mt-1 p-2 border border-gray-700 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-gray-900 text-gray-200">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-400">Message</label>
+                    <textarea id="message" rows="4" class="w-full mt-1 p-2 border border-gray-700 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-gray-900 text-gray-200"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-8 border-t border-gray-700 mt-8">
+            <p class="text-sm text-gray-400">&copy; 2025 Your Name. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
-
